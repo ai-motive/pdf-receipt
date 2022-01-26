@@ -2,3 +2,6 @@ beautifulsoup4
 pandas
 pdfplumber
 requests
+
+# custom --------------------------------------
+git+ssh://git@github.com/mathFLAT/python_utils.git
