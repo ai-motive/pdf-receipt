@@ -10,6 +10,11 @@
 
 
 ## 환경 설정
+**코드 클론**
+```
+git clone https://github.com/ai-motive/pdf-receipt.git
+```
+
 **콘다 환경 생성**
 ```
 conda create -n pdf-receipt python=3.8
