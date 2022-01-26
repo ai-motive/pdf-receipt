@@ -3,8 +3,8 @@
 
 ## 다운로드 및 설치
 **Anaconda 3** (win)   : https://www.anaconda.com/products/individual#windows
-
 **Pycharm** (Community) : https://www.jetbrains.com/ko-kr/pycharm/download/#section=windows
+**Git** (win) : https://git-scm.com/downloads
 
 
 ## 환경 설정
