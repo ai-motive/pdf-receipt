@@ -4,4 +4,4 @@ pdfplumber
 requests
 
 # custom --------------------------------------
-git+ssh://git@github.com/mathFLAT/python_utils.git
+git+https://github.com/mathFLAT/python_utils.git
