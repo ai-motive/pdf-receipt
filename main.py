@@ -42,16 +42,23 @@ def parse_data_from_pdf(path) -> List[dict]:
                 crop_page = page.crop(bbox=(page_x, 0, page_w, h))
 
                 text = crop_page.extract_text()
-                lines = text.split('\n')
+
+                if text:
+                    lines = text.split('\n')
+                else:
+                    continue
 
                 if len(lines) <= 2:
                     continue
 
+                lines += 'add margin line'
                 for l_idx, line in enumerate(lines):
                     # 대상열 이름 포함여부 확인
                     title_line_ = any(name in line for name in TOTAL_COLUMNS)
+
                     if title_line_:
                         parse_dict = parse_line(line, lines[l_idx + 1])
+
                         total_dict.update(parse_dict)
                         continue
 
@@ -159,7 +166,7 @@ def get_business_registration_status(url, data, crn):
         except Exception as e:
             status = resp.text
 
-        return status.replace('\n', '')
+        return status.replace('\n', '').replace(',', '')
 
 
 def main(args):
@@ -168,7 +175,7 @@ def main(args):
 
     df = pd.DataFrame(columns=['파일명'] + TOTAL_COLUMNS)
     for idx, path in enumerate(pdf_paths):
-        # if '19.pdf' != path[-6:]:
+        # if '33.pdf' != path[-6:]:
         #     continue
         total_dicts = parse_data_from_pdf(path)
 
